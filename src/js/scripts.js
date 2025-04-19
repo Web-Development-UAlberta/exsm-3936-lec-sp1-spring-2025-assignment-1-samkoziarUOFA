@@ -4,9 +4,9 @@
 async function main() {
   
   class Engine {
-    constructor(CylinderCount) {
+    constructor() {
       this.CylinderCount = 6;
-      this.isRunning = isRunning;
+      this.isRunning = false; // car start is off. On = true
     }
   }
   
@@ -17,9 +17,20 @@ async function main() {
       this.model = model || "IS 300";
       this.year = 2002;
       this.odometer = 0;
-
     }
+  }
 
-}
+
+let myCar = new Car("Lexus", "IS300", 2002); // 1. Instantiate car
+
+myCar.startEngine(); // 2. Turn its engine on
+myCar.drive(100); // 3. Drive for 100km 
+myCar.stopEngine(); // 4. Turn the engine off
+myCar.startEngine(); // 5. Turn its engine on
+myCar.drive(50); // 6. Drive for 50km
+myCar.startEngine(); // 7. Turn the engine off
+
+output("Output of odomoter reading here"); // Output the odometer reading to the console 
+
 
 }
