@@ -25,7 +25,7 @@ async function main() {
     // Start engine method
     startEngine() {
       this.engine.isRunning = true;
-      output(`Engine has been started`);
+      output(`Engine is running.`);
     }
 
     // Stop engine method
@@ -38,7 +38,7 @@ async function main() {
     drive(kilometers) {
       if (this.engine.isRunning) {
         this.odometer += kilometers;
-        output(`Odometer is currently: ${this.odometer}km`);
+        output(`You have driven ${kilometers} kilometers. Odometer is currently: ${this.odometer} km`);
       } else {
         output("The engine is off.");
       }
@@ -56,6 +56,11 @@ async function main() {
   myCar.drive(50);         // 6. Drive for 50km
   myCar.stopEngine();      // 7. Turn the engine off
 
-  output(`Final odometer reading: ${myCar.odometer}km`); // 8.	Output the odometer reading to the console.
+  output(`Final odometer reading: ${myCar.odometer} km`); // 8.	Output the odometer reading to the console.
+
+// JSON output of Car object
+
+const carJson = JSON.stringify(myCar);
+output(carJson);
 
 }
